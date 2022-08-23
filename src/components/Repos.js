@@ -5,7 +5,27 @@ import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
   console.log(repos);
-  return <h2>repos component</h2>;
+  const chartData = [
+    {
+      label: 'NO',
+      value: '10',
+    },
+    {
+      label: 'CSS',
+      value: '8',
+    },
+    {
+      label: 'Javascript',
+      value: '7',
+    },
+  ];
+  return (
+    <section className="section">
+      <Wrapper className="section-center">
+        <ExampleChart data={chartData} />
+      </Wrapper>
+    </section>
+  );
 };
 
 const Wrapper = styled.div`
