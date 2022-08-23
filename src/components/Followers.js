@@ -9,9 +9,9 @@ const Followers = () => {
     <Wrapper>
       <div className="followers">
         {followers.map((follower, index) => {
-          const { avatar_url, login, html_url } = follower;
+          const { id, avatar_url, login, html_url } = follower;
           return (
-            <article>
+            <article key={id}>
               <img src={avatar_url} alt={login} />
               <div>
                 <h4>{login}</h4>
