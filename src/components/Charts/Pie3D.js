@@ -27,14 +27,7 @@ const ChartComponent = ({ data }) => {
       // Chart Configuration
       chart: {
         //Set the chart caption
-        caption: 'Language',
-        //Set the chart subcaption
-        subCaption: 'In MMbbl = One Million barrels',
-        //Set the x-axis name
-        xAxisName: 'Country',
-        //Set the y-axis name
-        yAxisName: 'Reserves (MMbbl)',
-        numberSuffix: 'K',
+        caption: 'Languages',
         //Set the theme for your chart
         theme: 'fusion',
         decimals: 0,
