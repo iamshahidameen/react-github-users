@@ -52,21 +52,6 @@ const Repos = () => {
   stars = Object.values(stars).slice(-5).reverse();
   forks = Object.values(forks).slice(-5).reverse();
   console.log(forks);
-
-  const chartData = [
-    {
-      label: 'NO',
-      value: '10',
-    },
-    {
-      label: 'CSS',
-      value: '8',
-    },
-    {
-      label: 'Javascript',
-      value: '7',
-    },
-  ];
   return (
     <section className="section">
       <Wrapper className="section-center">
@@ -74,7 +59,7 @@ const Repos = () => {
         <Pie3D data={mostUsed} />
         <Column3D data={stars} />
         <Doughnut2D data={mostPopular} />
-        <Bar3D data={mostUsed} />
+        <Bar3D data={forks} />
         <div></div>
       </Wrapper>
     </section>
