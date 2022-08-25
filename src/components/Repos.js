@@ -38,7 +38,19 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-  console.log(mostPopular);
+  // Stars, Forks
+  let { stars, forks } = repos.reduce(
+    (total, item) => {
+      const { stargazers_count, name, forks } = item;
+      total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      return total;
+    },
+    { stars: {}, forks: {} }
+  );
+
+  stars = Object.values(stars).slice(-5).reverse();
+  console.log(stars);
+
   const chartData = [
     {
       label: 'NO',
@@ -58,7 +70,7 @@ const Repos = () => {
       <Wrapper className="section-center">
         {/* <ExampleChart data={chartData} /> */}
         <Pie3D data={mostUsed} />
-        <Column3D data={mostUsed} />
+        <Column3D data={stars} />
         <Doughnut2D data={mostPopular} />
         <Bar3D data={mostUsed} />
         <div></div>
