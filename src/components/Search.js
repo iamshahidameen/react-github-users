@@ -7,7 +7,10 @@ const Search = () => {
   // Get things from global context
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(user);
+    if (user) {
+    }
   };
   return (
     <section className="section">
@@ -15,7 +18,12 @@ const Search = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch />
-            <input type="text" placeholder="Enter Github User" />
+            <input
+              type="text"
+              placeholder="Enter Github User"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+            />
             <button className="submit">Search</button>
           </div>
         </form>
