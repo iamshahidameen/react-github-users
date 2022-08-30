@@ -4,10 +4,9 @@ import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
 const Search = () => {
   const [user, setUser] = React.useState('');
-  const { requests } = React.useContext(GithubContext);
-  console.log(requests);
-  // Get things from global context
+  const { requests, error } = React.useContext(GithubContext);
 
+  // Get things from global context
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
@@ -17,6 +16,11 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch />
