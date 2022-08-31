@@ -18,7 +18,7 @@ const GithubProvider = ({ children }) => {
   // Request Loading
 
   const [requests, setRequests] = useState(0);
-  const [loading, setISLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Error
   const [error, setError] = useState({ show: false, msg: '' });
@@ -69,6 +69,8 @@ const GithubProvider = ({ children }) => {
         requests,
         error,
         searchGithubUser,
+        isLoading,
+        setIsLoading,
       }}
     >
       {' '}
